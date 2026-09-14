@@ -16,6 +16,10 @@ class FashionAiService
         $data = ['text' => $text, 'limit' => $limit];
         if ($image) {
             $request = $request->attach('image', file_get_contents($image->getRealPath()), $image->getClientOriginalName());
+        } else {
+            // FastAPI پارامترهای endpoint را با Form(...) می‌خواند؛ ارسال پیش‌فرض
+            // Laravel به‌شکل JSON بود و باعث خطای 422 برای جستجوی متنی می‌شد.
+            $request = $request->asForm();
         }
         return $request->post(rtrim(config('services.fashion_ai.url'), '/').'/search', $data)->throw()->json('results', []);
     }
