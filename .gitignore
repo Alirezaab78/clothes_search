@@ -1,0 +1,35 @@
+# Laravel runtime and secrets
+laravel-app/.env
+laravel-app/.env.*
+!laravel-app/.env.example
+laravel-app/vendor/
+laravel-app/node_modules/
+laravel-app/public/build/
+laravel-app/public/hot
+laravel-app/public/storage
+laravel-app/storage/*.key
+laravel-app/storage/framework/cache/
+laravel-app/storage/framework/sessions/
+laravel-app/storage/framework/views/
+laravel-app/storage/logs/
+laravel-app/database/*.sqlite
+
+# Python virtual environments, caches and local vector store
+ai-service/.venv/
+ai-service/__pycache__/
+ai-service/**/*.py[cod]
+ai-service/data/
+.pytest_cache/
+.mypy_cache/
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.fleet/
+.zed/
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+*.tmp
